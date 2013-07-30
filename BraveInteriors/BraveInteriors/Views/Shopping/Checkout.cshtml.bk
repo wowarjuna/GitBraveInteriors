@@ -1,0 +1,240 @@
+﻿<script language="javascript" type="text/javascript">
+    $(document).ready(function () {
+        $("#fCheckout").validate();
+
+        $("input[name='pay-method']").click(function () {
+            if ($(this).val() == 'paypal') {
+                $('.paypal-form').css('display', 'block');
+                $('.worldpay-form').css('display', 'none');
+                $("#BuyForm").validate().cancelSubmit = true;
+                $("#fCheckout").validate();
+            } else {
+                $('.paypal-form').css('display', 'none');
+                $('.worldpay-form').css('display', 'block');
+                $("#fCheckout").validate().cancelSubmit = true;
+                $("#BuyForm").validate();
+            }
+        });
+    });
+</script>
+<div id="page-body" style="position: relative; background-position: center; padding: 0px;
+    margin: 0px; border: none; top: 134px; height: 534px; width: 1000px; overflow: auto;">
+
+<div style="margin-left: 3px; margin-top: 16px; margin-bottom: 10px;">
+			<table width="470" border="0" align="left" cellpadding="0" cellspacing="0">
+                  <tr>
+                      <td width="286" class="Maintoptextstyle" style="text-align:left;"> <strong> How would you like to make the payment?</strong></td>
+                      <td width="20"><input name="pay-method" type="radio" value="paypal" checked="checked"  /></td>
+                      <td width="38" class="Maintoptextstyle" style="text-align:left;">PayPal</td>
+                      <td width="6">&nbsp;</td>
+                      <td width="20"><input name="pay-method" type="radio" value="worldpay" /></td>
+                      <td width="102" class="Maintoptextstyle" style="text-align:left;">WorldPay</td>
+                    </tr>
+                  </table></div>                  
+                  
+  <!-- Start user-reg -->
+    <!-- https://www.sandbox.paypal.com/cgi-bin/webscr -->
+    <!-- https://www.paypal.com/cgi-bin/webscr -->
+    <!-- contact@braveinteriors.com -->
+    
+ <div style="margin-left: 0px; margin-top: 38px; margin-bottom: 10px; position:absolute;">   
+    
+    <div class="paypal-form">
+        @using (Html.BeginForm(null, null, FormMethod.Post, new { action = "https://www.sandbox.paypal.com/cgi-bin/webscr", id = "fCheckout" }))
+        {
+            <input type="hidden" name="cmd" value="_cart" />
+            <input type="hidden" name="upload" value="1" />
+            <input type="hidden" name="business" value="arjuna.dratharashtra-facilitator@gmail.com" />
+            <input type="hidden" name="currency_code" value="GBP" />
+            <input type="hidden" name="no_shipping" value="2" />
+            <input type="hidden" name="address_override" value="0" />
+            <input type="hidden" name="country" value='@Session["ShippingCountry"]' />
+            <input type="hidden" name="custom" value='@Session["HeardUsFrom"]' />
+			
+            
+          
+            {
+                int _i = 1;
+
+                foreach (var _item in ViewBag.Cart)
+                {
+                    string name = string.Format("item_name_{0}", _i);
+                    string amount = string.Format("amount_{0}", _i);
+                    string qty = string.Format("quantity_{0}", _i);
+                    string shipping = string.Format("shipping_{0}", _i);
+            <input type="hidden" name="@name" value="@_item.Value.Description" />
+            <input type="hidden" name="@amount" value="@_item.Value.Price" />
+            <input type="hidden" name="@qty" value="@_item.Value.Qty" /> 
+            <input type="hidden" name="@shipping" value="@_item.Value.ShippingTotal" />       
+                    _i += 1;
+
+                }
+            }
+            
+        
+            <table border="0" width="980" cellspacing="0" cellpadding="2" style="border-style: none;
+                border-top: solid; border-top-color: #000; border-top-width: 1px;">
+                <tr>
+                  <td colspan="4" valign="top"><div style="margin-left: 0px; width:600px; margin-top: 10px; margin-bottom: 15px;"> <span class="Main-bold-blacktext">Shipping Information</span></div></td>
+                </tr>
+                <tr>
+                    <td width="90" valign="top">
+                        <span class="Maintoptextstyle"><strong>First Name</strong></span>
+                    </td>
+                    <td colspan="3" valign="top">
+                        <span class="Maintoptextstyle">
+                            <input name="first_name" type="text" class="Textboxstyle required" id="first_name" size="45" value="@ViewBag.Customer.FirstName" />
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td valign="top">
+                        <span class="Maintoptextstyle"><strong>Last Name</strong></span>
+                    </td>
+                    <td colspan="3" valign="top">
+                        <span class="Maintoptextstyle">
+                            <input name="last_name" type="text" class="Textboxstyle required" id="last_name" size="45" value="@ViewBag.Customer.LastName" />
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td valign="top">
+                        <span class="Maintoptextstyle"><strong>Address</strong></span>
+                    </td>
+                    <td colspan="3" valign="top">
+                        <span class="Maintoptextstyle">
+                            <input name="address1" type="text" class="Textboxstyle required" id="address1" size="45" value="@ViewBag.Customer.Address1" />
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td valign="top">&nbsp;
+                        
+                    </td>
+                    <td colspan="3" valign="top">
+                        <span class="Maintoptextstyle">
+                            <input name="address2" type="text" class="Textboxstyle" id="address2" size="45" value="@ViewBag.Customer.Address2" />
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td valign="top">
+                        <span class="Maintoptextstyle"><strong>City</strong></span>
+                    </td>
+                    <td colspan="3" valign="top">
+                        <span class="Maintoptextstyle">
+                            <input name="city" type="text" class="Textboxstyle required" id="city" size="45" />
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td valign="top">
+                        <span class="Maintoptextstyle"><strong>Post code</strong></span>
+                    </td>
+                    <td colspan="3" valign="top">
+                        <span class="Maintoptextstyle">
+                            <input name="zip" type="text" class="Textboxstyle required" id="zip" size="14" value="@ViewBag.Customer.PostCode"  />
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td valign="top">
+                        <span class="Maintoptextstyle"><strong>Country</strong></span>
+                    </td>
+                    <td colspan="3" valign="top">
+                        @Html.DropDownList("dcountry", (List<SelectListItem>)ViewBag.Countries, new { @class = "Textboxstyle", @disabled = "disabled" })
+                    </td>
+                </tr>
+                <tr>
+                    <td height="60" colspan="4" valign="middle">
+                        <input type="submit" value=" " class="paypal-btn" />
+                    </td>
+                </tr>
+            </table>
+        }
+    </div>
+    <div style="position: relative; float: none; display: none" class="worldpay-form">
+        @using (Html.BeginForm(null, null, FormMethod.Post, new { action = "https://secure-test.worldpay.com/wcc/purchase", id = "BuyForm", name = "BuyForm" }))
+        {
+            <input type="hidden" name="instId" value="298954" /><!-- The "instId" value "211616" should be replaced with the Merchant's own installation Id -->
+            <input type="hidden" name="cartId" value="abc123" /><!-- This is a unique identifier for merchants use. Example: PRODUCT123 -->
+            <input type="hidden" name="currency" value="GBP" /><!-- Choose appropriate currency that you would like to use -->
+            <input type="hidden" name="amount" value="1" />
+            <input type="hidden" name="desc" value="test" />
+            <input type="hidden" name="testMode" value="100" />
+            <input name="hideContact" type="hidden" />
+            <input name="hideCurrency" type="hidden" />
+            <table border="0" width="980" cellspacing="0" cellpadding="2" style="border-style: none;
+                border-top: solid; border-top-color: #000; border-top-width: 1px;">
+                <tr>
+                  <td colspan="4" valign="top"><div style="margin-left: 0px; width:600px; margin-top: 10px; margin-bottom: 15px;"> <span class="Main-bold-blacktext">Shipping Information</span></div></td>
+                </tr>
+                <tr>
+                    <td width="90" valign="top">
+                        <span class="Maintoptextstyle"><strong>Full Name</strong></span>
+                    </td>
+                    <td colspan="3" valign="top">
+                        <span class="Maintoptextstyle">
+                            <input  name="name" value="@ViewBag.Customer.FirstName" class="Textboxstyle required" style="width:300px;" />
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td valign="top">
+                        <span class="Maintoptextstyle"><strong>Address</strong></span>
+                    </td>
+                    <td colspan="3" valign="top">
+                        <span class="Maintoptextstyle">
+                            <textarea name="address" cols="26" class="Textboxstyle required" id="address" rows="4" style="width:300px; height:80px;"></textarea>
+                        </span>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td valign="top">
+                        <span class="Maintoptextstyle"><strong>Post code</strong></span>
+                    </td>
+                    <td colspan="3" valign="top">
+                        <span class="Maintoptextstyle">
+                            <input name="postcode" type="text" class="Textboxstyle required" id="postcode" style="width:99px;" value="@ViewBag.Customer.PostCode"  />
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td valign="top">
+                        <span class="Maintoptextstyle"><strong>Country</strong></span>
+                    </td>
+                    <td colspan="3" valign="top">
+                        @Html.DropDownList("country", (List<SelectListItem>)ViewBag.Countries, new { @class = "Textboxstyle" })
+                    </td>
+                </tr>
+                <tr>
+                    <td valign="top">
+                        <span class="Maintoptextstyle"><strong>Telephone</strong></span>
+                    </td>
+                    <td colspan="3" valign="top">
+                        <span class="Maintoptextstyle">
+                            <input name="tel" type="text" class="Textboxstyle required" id="tel" style="width:150px;" value=""  />
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td valign="top">
+                        <span class="Maintoptextstyle"><strong>Email</strong></span>
+                    </td>
+                    <td colspan="3" valign="top">
+                        <span class="Maintoptextstyle">
+                            <input name="email" type="text" class="Textboxstyle required" id="email" style="width:300px;" value=""  />
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td height="60" colspan="4" valign="middle">
+                        <input type="submit" value="Pay with WorldPay" />
+                    </td>
+                </tr>
+            </table>
+        }
+    </div></div>
+    <!-- End user-reg -->
+</div>

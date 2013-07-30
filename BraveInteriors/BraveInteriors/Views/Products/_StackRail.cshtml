@@ -1,0 +1,148 @@
+﻿<script type="text/javascript" src="/scripts/jquery.galleriffic-edit.js"></script>
+<link href="/css/modal.css" rel="stylesheet" type="text/css" />
+
+<div id="page-body" style="position: relative; background-position: center; padding: 0px;
+    margin: 0px; border: none; top: 134px;">
+    <div id="gallery-tag" style="text-align: center; font-family: Verdana, Helvetica, Arial, sans-serif;
+        color: #444; font-size: 10px;">
+        <div id="gal-divider">
+        </div>
+        <!--<div id="gal-outer">
+        </div>-->
+        <div style="padding: 0px; margin: 0px; border: 0px; float: left; position: absolute;
+            margin-top: 475px; margin-left: 206px;">
+            <div class="fb-like" data-href="http://www.braveinteriors.com/Products/Garment/StackRail"
+                data-send="false" data-width="" data-show-faces="false" style="float: right;
+                margin-left: 7px;">
+            </div>
+            <a href="#" class="tooltip2">
+                <img src="/images/tooltip_icon.gif" width="13" height="13" style="border: 0px; margin-top: 6px" />
+                <span style="font-family: Verdana, Geneva, sans-serif; font-size: 10px; text-align: left;">
+                    <img class="tipimg" src="/images/tooltp.gif" />Simply like us on Facebook to receive
+                    a promo code. Enter this code on checking out to reduce the price your purchase,
+                    &pound;10 off all rails, &pound;20 off all storage and tables. </span></a>
+        </div>
+        <div id="manual" style="padding: 0px; margin: 0px; border: 0px;">
+        </div>
+        <div id="gal-360" style="padding: 0px; margin: 0px; border: 0px;">
+            <!-- start 360 popup -->
+            <div style="padding: 0px; margin: 0px; border: 0px;" id='container'>
+                <div style="padding: 0px; margin: 0px; border: 0px;" id='content'>
+                    <!--<div style="padding: 0px; margin: 0px; border: 0px;" id='basic-modal1'>
+                        <a href="#" class='basic1'>
+                            <img src="/images/360.jpg" width="69" height="23" border="0" /></a>
+                    </div>-->
+                    <!-- modal popup -->
+                    <div id="basic-modal-content1">
+                        <object id="FlashID" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="380"
+                            height="570">
+                            <param name="movie" value="/images/brave-rail-360.swf" />
+                            <param name="quality" value="high" />
+                            <param name="wmode" value="opaque" />
+                            <param name="swfversion" value="8.0.35.0" />
+                            <!-- This param tag prompts users with Flash Player 6.0 r65 and higher to download the latest version of Flash Player. Delete it if you don’t want users to see the prompt. -->
+                            <param name="expressinstall" value="Scripts/expressInstall.swf" />
+                            <!-- Next object tag is for non-IE browsers. So hide it from IE using IECC. -->
+                            <!--[if !IE]>-->
+                            <object type="application/x-shockwave-flash" data="/images/brave-rail-360.swf" width="380"
+                                height="570">
+                                <!--<![endif]-->
+                                <param name="quality" value="high" />
+                                <param name="wmode" value="opaque" />
+                                <param name="swfversion" value="8.0.35.0" />
+                                <param name="expressinstall" value="Scripts/expressInstall.swf" />
+                                <!-- The browser displays the following alternative content for users with Flash Player 6.0 and older. -->
+                                <div>
+                                    <h4>
+                                        Content on this page requires a newer version of Adobe Flash Player.</h4>
+                                    <p>
+                                        <a href="http://www.adobe.com/go/getflashplayer">
+                                            <img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif"
+                                                alt="Get Adobe Flash player" width="112" height="33" /></a></p>
+                                </div>
+                                <!--[if !IE]>-->
+                            </object>
+                            <!--<![endif]-->
+                        </object>
+                    </div>
+                    <!-- preload the images -->
+                    <div style='display: none'>
+                        <img src='/images/close-button.png' alt='' />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end 360 popup -->
+        <div id="page">
+            <div id="container">
+                <!-- Start Advanced Gallery Html Containers -->
+                <div id="gallery" class="content" style="margin-top: 32px;">
+                    <div id="controls" class="controls">
+                    </div>
+                    <div class="slideshow-container">
+                        <div id="loading" class="loader">
+                        </div>
+                        <div id="slideshow" class="slideshow">
+                        </div>
+                    </div>
+                </div>
+                <div id="thumbs" class="navigation" style="margin-top: 27px;">
+                    <ul class="thumbs noscript">
+						<li><a class="thumb" name="" href="/images/stack-rail-001.jpg" title="Stack Rail"><img src="/images/thumb/stack-rail-001.jpg" alt="Stack Rail" /></a>
+                          <div class="caption">
+                          </div>
+                        </li>
+					</ul>
+                </div>
+                <!-- End Advanced Gallery Html Containers -->
+                <!-- Add image link -->
+                <div style="clear: both;">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="cart-body" style="padding: 0px; margin: 0px; overflow: hidden; z-index: 10">
+        @using (Html.BeginForm("Cart", "Shopping", FormMethod.Post, new { id = "fItem" }))
+        {
+            @Html.AntiForgeryToken()
+            <input type="hidden" name="product" value="07|Stack Rail" />
+            <input type="hidden" name="size" value="200| " />
+            <div id="cart-tital-header">
+                <span class="cartboldtitlsmall">Stack Rail <span class="reportback">From &pound;200.00</span></span></div>
+            <div id="cart-pane" style="background-position: center; padding: 0px; margin: 0px;
+                overflow: hidden;">
+            </div>
+            <div id="dropdown-colm">
+                <table width="165" border="0" align="center" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td height="46" colspan="2" class="Maintoptextstyle">
+                            _______ <strong>Add-ons</strong> _______
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="144" colspan="2">
+                            <div style="margin-bottom: 10px;">
+                                <select name="addon" class="Dropdownboxstyle" id="addon" style="width: 140px;">
+                                    <option value="">Bag Hooks</option>
+                                    <option value="5|Bag Hooks (Qty 1)">Qty 1 &pound;5</option>
+                                    <option value="8|Bag Hooks (Qty 2)">Qty 2 &pound;8</option>
+                                    <option value="11|Bag Hooks (Qty 3)">Qty 3 &pound;11</option>
+                                </select>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <input type="submit" class="add-to-cart" value=" " />
+                        </td>
+                    </tr>
+                   
+                </table>
+            </div>
+            <div class="Maintoptextstyle" id="cart-pane-text">
+               </div>
+        }
+    </div>
+</div>
+<div id="apDiv1">
+</div>

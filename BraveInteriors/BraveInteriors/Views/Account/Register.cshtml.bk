@@ -1,0 +1,130 @@
+﻿<div id="page-body" style="position: relative; background-position: center; padding: 0px;
+    margin: 0px; border: none; top: 134px; height: 534px; width: 1000px; overflow-x:hidden; overflow-y:auto;">
+  <div style="width: 960px; margin-left: 8px; margin-top: 20px;"> <span class="Main-bold-blacktext">New to Brave Interiors?</span></div>
+  <!-- Start user-reg -->
+  <div class="user-reg-div"> @using (Html.BeginForm("Register", "Account"))
+    {
+    <table width="1000" border="0" cellspacing="0" cellpadding="3">
+      <tr>
+        <td height="50" colspan="7" class="Maintoptextstyle" style="border-top: solid 1px;"> Register with us and make your visits to braveinteriors.com even quicker and easier! </td>
+      </tr>
+      <tr>
+        <td width="92" class="Maintoptextstyle"><div> <strong>
+          <label for="firstName3"> First name *</label>
+        </strong></div></td>
+        <td width="7"> : </td>
+        <td width="240"><input name="FirstName" type="text" class="Textboxstyle" id="FirstName" size="40" /></td>
+        <td width="12">&nbsp;</td>
+        <td width="165" class="Maintoptextstyle"><strong>Email address *</strong></td>
+        <td width="7"> : </td>
+        <td width="435"><input name="Email" type="text" class="Textboxstyle" id="Email" size="40" /></td>
+      </tr>
+      <tr>
+        <td class="Maintoptextstyle"><strong>Last name *</strong></td>
+        <td> : </td>
+        <td><input name="LastName" type="text" class="Textboxstyle" id="LastName" size="40" /></td>
+        <td>&nbsp;</td>
+        <td class="Maintoptextstyle"><strong>Confirm email address *</strong></td>
+        <td> : </td>
+        <td><input name="ConfirmEmail" type="text" class="Textboxstyle" id="ConfirmEmail" size="40" /></td>
+      </tr>
+      <tr>
+        <td class="Maintoptextstyle"><strong>Telephone</strong><strong> *</strong></td>
+        <td>:</td>
+        <td><input name="Phone" type="text" class="Textboxstyle" id="Phone" size="40" /></td>
+        <td>&nbsp;</td>
+        <td class="Maintoptextstyle"><strong>
+          <label for="logonPassword">Password *</label>
+        </strong></td>
+        <td>:</td>
+        <td><input name="Password" type="password" class="Textboxstyle" id="Password" size="25" /></td>
+      </tr>
+      <tr>
+        <td class="Maintoptextstyle"><strong>Address *</strong></td>
+        <td>:</td>
+        <td><input name="Address1" type="text" class="Textboxstyle" id="Address1" size="40" /></td>
+        <td>&nbsp;</td>
+        <td class="Maintoptextstyle">&nbsp;</td>
+        <td>&nbsp;</td>
+        <td><span class="Maintoptextstyle">(min. 6 characters incl. 2 numbers)</span></td>
+      </tr>
+      <tr>
+        <td class="Maintoptextstyle">&nbsp;</td>
+        <td>&nbsp;</td>
+        <td><input name="Address2" type="text" class="Textboxstyle" id="Address2" size="40" /></td>
+        <td>&nbsp;</td>
+        <td class="Maintoptextstyle"><strong>Confirm password *</strong></td>
+        <td>:</td>
+        <td><span class="Maintoptextstyle">
+          <input name="ConfirmPassword" type="password" class="Textboxstyle" id="ConfirmPassword"
+                            size="25" />
+        </span></td>
+      </tr>
+      <tr>
+        <td class="Maintoptextstyle"><strong>Postcode<strong>*</strong></strong></td>
+        <td>:</td>
+        <td><input name="PostCode" type="text" class="Textboxstyle" id="PostCode" size="15" /></td>
+        <td>&nbsp;</td>
+        <td class="Maintoptextstyle">&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td class="Maintoptextstyle"><div>
+          <div><strong>Country </strong><strong>*</strong></div>
+        </div></td>
+        <td> : </td>
+        <td><select name="country" class="Textboxstyle" id="country">
+          <option value="UK">United Kingdom</option>
+          <option value="AD">Andorra</option>
+          <option value="AT">Austria</option>
+          <option value="BE">Belgium</option>
+          <option value="CY">Cyprus</option>
+          <option value="CZ">Czech Republic</option>
+          <option value="DK">Denmark</option>
+          <option value="FI">Finland</option>
+          <option value="FR">France</option>
+          <option value="DE">Germany</option>
+          <option value="GI">Gibraltar</option>
+          <option value="GR">Greece</option>
+          <option value="HU">Hungary</option>
+          <option value="IS">Iceland</option>
+          <option value="IE">Ireland</option>
+          <option value="IT">Italy</option>
+          <option value="LV">Latvia</option>
+          <option value="LI">Liechtenstein</option>
+          <option value="LT">Lithuania</option>
+          <option value="LU">Luxembourg</option>
+          <option value="MT">Malta</option>
+          <option value="MC">Monaco</option>
+          <option value="NL">Netherlands</option>
+          <option value="NO">Norway</option>
+          <option value="PL">Poland</option>
+          <option value="PT">Portugal</option>
+          <option value="SK">Slovakia</option>
+          <option value="SI">Slovenia</option>
+          <option value="ES">Spain</option>
+          <option value="SE">Sweden</option>
+          <option value="CH">Switzerland</option>
+          <option value="UA">Ukraine</option>
+          
+        </select></td>
+        <td>&nbsp;</td>
+        <td class="Maintoptextstyle">&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td height="40" colspan="7"><span class="Maintoptextstyle">By submitting your details you consent to their use in
+          accordance with your preferences indicated above and our Privacy policy.</span></td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td colspan="5"><input type="submit" name="button" id="button" value="Register" />
+          <input type="submit" name="button2" id="button2" value="Cancel" /></td>
+      </tr>
+    </table>
+} </div>
+  <!-- End user-reg -->
+</div>

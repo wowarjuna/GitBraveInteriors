@@ -1,0 +1,163 @@
+﻿<script type="text/javascript" src="/scripts/jquery.galleriffic.js"></script>
+
+<div id="page-body" style="position: relative; background-position: center; padding: 0px;
+    margin: 0px; border: none; top: 134px;">
+    <div id="gallery-tag" style="text-align: center; font-family: Verdana, Helvetica, Arial, sans-serif;
+        color: #444; font-size: 10px;">
+        <div id="gal-divider">
+        </div>
+        <!--<div id="gal-outer">
+        </div>-->
+        
+<div style="padding: 0px; margin: 0px; border: 0px; float:left; position:absolute; margin-top:475px; margin-left:206px;">
+
+<div class="fb-like" data-href="http://braveinteriors.com/Products/Garment/BraveRail" data-send="false" data-layout="button_count" data-width="" data-show-faces="false"></div>
+
+</div>
+
+        <div id="gal-360" style="padding: 0px; margin: 0px; border: 0px;">
+            <!-- start 360 popup -->
+            <div style="padding: 0px; margin: 0px; border: 0px;" id='container'>
+                <div style="padding: 0px; margin: 0px; border: 0px;" id='content'>
+                    <div style="padding: 0px; margin: 0px; border: 0px;" id='basic-modal1'>
+                    <!--    <a href="#" class='basic1'>
+                            <img src="/images/360.jpg" width="69" height="23" border="0" /></a>-->
+                    </div>
+                    <!-- modal popup -->
+                    <div id="basic-modal-content1">
+                        <object id="FlashID" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="478"
+                            height="550">
+                            <param name="movie" value="/images/jnr-360.swf" />
+                            <param name="quality" value="high" />
+                            <param name="wmode" value="opaque" />
+                            <param name="swfversion" value="8.0.35.0" />
+                            <!-- This param tag prompts users with Flash Player 6.0 r65 and higher to download the latest version of Flash Player. Delete it if you don’t want users to see the prompt. -->
+                            <param name="expressinstall" value="Scripts/expressInstall.swf" />
+                            <!-- Next object tag is for non-IE browsers. So hide it from IE using IECC. -->
+                            <!--[if !IE]>-->
+                            <object type="application/x-shockwave-flash" data="/images/jnr-360.swf" width="478"
+                                height="550">
+                                <!--<![endif]-->
+                                <param name="quality" value="high" />
+                                <param name="wmode" value="opaque" />
+                                <param name="swfversion" value="8.0.35.0" />
+                                <param name="expressinstall" value="Scripts/expressInstall.swf" />
+                                <!-- The browser displays the following alternative content for users with Flash Player 6.0 and older. -->
+                                <div>
+                                    <h4>
+                                        Content on this page requires a newer version of Adobe Flash Player.</h4>
+                                    <p>
+                                        <a href="http://www.adobe.com/go/getflashplayer">
+                                            <img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif"
+                                                alt="Get Adobe Flash player" width="112" height="33" /></a></p>
+                                </div>
+                                <!--[if !IE]>-->
+                            </object>
+                            <!--<![endif]-->
+                        </object>
+                    </div>
+                    <!-- preload the images -->
+                    <div style='display: none'>
+                        <img src='/images/close-button.png' alt='' />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end 360 popup -->
+        <div id="page">
+            <div id="container">
+                <!-- Start Advanced Gallery Html Containers -->
+                <div id="gallery" class="content" style="margin-top: 32px;">
+                    <div id="controls" class="controls">
+                    </div>
+                    <div class="slideshow-container">
+                        <div id="loading" class="loader">
+                        </div>
+                        <div id="slideshow" class="slideshow">
+                        </div>
+                    </div>
+                </div>
+                <div id="thumbs" class="navigation" style="margin-top: 27px;">
+                    <ul class="thumbs noscript">
+                        <li><a class="thumb" name="" href="/images/coffee1.jpg" title="Title #1">
+                            <img src="/images/coffee1_1.jpg" alt="Title #1" />
+                        </a>
+                            <div class="caption">
+                            </div>
+                      </li>
+                                              <li><a class="thumb" name="" href="/images/coffee2.jpg" title="Title #1">
+                            <img src="/images/coffee2_2.jpg" alt="Title #1" />
+                        </a>
+                            <div class="caption">
+                            </div>
+                      </li>
+                      
+                                              <li><a class="thumb" name="" href="/images/coffee3.jpg" title="Title #1">
+                            <img src="/images/coffee3_3.jpg" alt="Title #1" />
+                        </a>
+                            <div class="caption">
+                            </div>
+                      </li>
+                                                                   
+                    </ul>
+</div>
+                <!-- End Advanced Gallery Html Containers -->
+                <!-- Add image link -->
+                <div style="clear: both;">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="cart-body" style="padding: 0px; margin: 0px; overflow: hidden; z-index: 10">
+        @using (Html.BeginForm("Cart", "Shopping", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+            <input type="hidden" name="product" value="06|Coffee Table" />
+            <input type="hidden" name="size" value="420| " />
+            <div id="cart-tital-header"><span class="cartboldtitlsmall">COFFEE TABLE &pound;420.00</span></div><div id="cart-pane" style="background-position: center; padding: 0px; margin: 0px;
+                overflow: hidden;">
+            </div>
+            <div id="dropdown-colm">
+                <table width="165" border="0" cellspacing="0" cellpadding="0">
+                  
+                    <tr>
+                      <td height="35"><span class="Maintoptextstyle"><strong>size </strong>: <br />
+                      L95cm x W60cm x H28cm</span></td>
+                    </tr>
+                    <tr>
+                      <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td width="21">
+                            <input name="qty" type="text" style="width:25px; height:16px; text-align:center;" value="1" />
+                            <span class="Maintoptextstyle">Quantity</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td height="35"><span class="Maintoptextstyle" style="color:#C00;">Inclusive of Free Shipping</span></td>
+                    </tr>
+                    <tr>
+                      <td><span class="Maintoptextstyle">This product is available for delivery within 2-4 weeks.</span></td>
+                    </tr>
+                    
+                    <tr>
+                      <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="submit" class="add-to-cart" value=" " />
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;
+                            
+                        </td>
+                    </tr>
+                </table>
+</div>
+            <div class="Maintoptextstyle" id="cart-pane-text-pantry"><br/><br/><br/><br/><br/>
+This quirky coffee table was inspired by a great British year.  Industrial design using four heavy duty castors for an easy roll and a hand painted and distressed on solid Oak Union Jack means each table is unique.</div>
+        }
+    </div>
+</div>

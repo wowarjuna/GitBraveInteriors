@@ -1,0 +1,219 @@
+﻿@helper GetUsername()
+    {
+    
+    //BraveInteriors.Models.BIContext _context = new BraveInteriors.Models.BIContext();
+    //var _customer = _context.Customers.Single(c => c.Email.Equals(User.Identity.Name));
+    //@string.Format("{0} {1}", _customer.FirstName, _customer.LastName)   
+}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta property="og:image" content="http://www.braveinteriors.com/images/nametag.png" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="HEAVY DUTY GARMENT RAIL, GARMENT RAIL, 2FT GARMENT RAIL, 3FT GARMENT RAIL, 4FT GARMENT RAIL, 5FT GARMENT RAIL, WARDROBE">
+    <title>::: Brave Interiors :::</title>
+    <link rel="stylesheet" href="/css/nivo-slider.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="/css/main-styles.css" type="text/css" media="screen" />
+    <link type='text/css' href='/css/basic.css' rel='stylesheet' media='screen' />
+    <link rel="stylesheet" type="text/css" href="/css/slidingdoors.css" />
+    <link rel="stylesheet" href="/css/galleriffic-4.css" type="text/css" />
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-21056772-5']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+    </script>
+    <!--<script type="text/javascript" src="/scripts/jquery-1.6.1.min.js"></script> -->
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script type='text/javascript' src='/scripts/jquery.validate.min.js'></script>
+    <script type="text/javascript" src="/scripts/dropdowntabs.js"></script>
+    <script type='text/javascript' src='/scripts/jquery.simplemodal.js'></script>
+    <script type='text/javascript' src='/scripts/basic.js'></script>
+    <script type="text/javascript" src="/scripts/jquery.history.js"></script>
+    <script type="text/javascript" src="/scripts/jquery.opacityrollover.js"></script>
+    <script src="/scripts/swfobject_modified.js" type="text/javascript"></script>
+    <script language="javascript" type="text/javascript">
+        $(document).ready(function () {
+            $("#fLogin").validate();
+        });
+    </script>
+</head>
+<body>
+    <div id="fb-root">
+    </div>
+    <script>        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1";
+            fjs.parentNode.insertBefore(js, fjs);
+        } (document, 'script', 'facebook-jssdk'));
+    </script>
+    <table border="0" align="center" cellpadding="0" cellspacing="0" width="1000px">
+        <tr>
+            <td>
+                @if (TempData.ContainsKey("Error") != null)
+                {
+                    <div class="error">
+                        @TempData["Error"]
+                    </div>
+                }
+                <div id="page-header" style="position: relative; background-position: center; padding: 0px;
+                    margin: 0px; border: none; top: 0px">
+                    <div id="graytop-header">
+                    </div>
+                    <div id="headerbase-tag">
+                    </div>
+                    <a href="/" target="_self">
+                        <div id="name-tag">
+                        </div>
+                    </a>
+                    <div id="slidemenu">
+                        <span style="position: absolute; left: 452px; top: 104px; padding: 0px; margin: 0px;
+                            width: 274px; height: 29px; z-index: 6;">
+                            <div id="slidemenu" class="slidetabsmenu">
+                                <ul>
+                                    <li><a href="#" title="Garment Rails" rel="dropmenu1_c"><span style="font-family: Calibri, Verdana, Geneva, sans-serif;
+                                        font-size: 14px; text-align: center; text-transform: uppercase; color: #FFF;">Garment
+                                        Rails</span></a></li>
+                                    <li><a href="#" title="Storage Solutions" rel="dropmenu2_c"><span style="font-family: Calibri, Verdana, Geneva, sans-serif;
+                                        font-size: 14px; text-align: center; text-transform: uppercase; color: #FFF;">Storage
+                                        Solutions</span></a></li>
+                                    <li><a href="#" title="Fish Stack" rel="dropmenu3_c"><span style="font-family: Calibri, Verdana, Geneva, sans-serif;
+                                        font-size: 14px; text-align: center; text-transform: uppercase; color: #FFF;">Fish
+                                        Stack</span></a></li>
+                                    <li><a href="#" title="Coffee Table" rel="dropmenu4_c"><span style="font-family: Calibri, Verdana, Geneva, sans-serif;
+                                        font-size: 14px; text-align: center; text-transform: uppercase; color: #FFF;">Coffee
+                                        Table</span></a></li>
+                                    <li><a href="#" title="Cork Bowl" rel="dropmenu5_c"><span style="font-family: Calibri, Verdana, Geneva, sans-serif;
+                                        font-size: 14px; text-align: center; text-transform: uppercase; color: #FFF;">Cork
+                                        Bowl</span></a></li>
+                                </ul>
+                            </div>
+                        </span>
+                    </div>
+                    <!-- start 360 popup -->
+                    <div style="padding: 0px; margin: 0px; border: 0px;" id='container'>
+                        <div style="padding: 0px; margin: 0px; border: 0px;" id='content'>
+                            <div style="padding: 0px; margin: 0px; border: 0px;" id='basic-modal'>
+                                @if (HttpContext.Current.User.Identity.IsAuthenticated)
+                                {
+                                    <div id="welcome-tag" class="Maintoptextstyle">
+                                        Welcome @GetUsername() | <a href="/Account/LogOff">Logout</a>
+                                    </div>
+                                                           
+                                }
+                                else
+                                {
+                                    <div id="welcome-tag" class="Maintoptextstyle">
+                                        Welcome to Brave Interiors. &nbsp;&nbsp;<a href="/Account/Register">Join</a> |
+                                    </div>
+                                    <div id="signin-tag" class="Maintoptextstyle">
+                                        <a href="#" class="basic">Signin</a></div>
+                                
+                                }
+                                <!-- modal popup -->
+                                <div id="basic-modal-content">
+                                    <table border="0" align="center" cellpadding="0" cellspacing="0" height="206" width="373">
+                                        <tr>
+                                            <td>
+                                                @using (Html.BeginForm("LogOn", "Account", FormMethod.Post, new { id = "fLogin" }))
+                                                { 
+                                                    <div class="Maintoptextstyle" id="loginapdiv8">
+                                                    </div>
+                                                    <div class="Main-bold-blacktext" style="padding-top: 8px;" id="loginapdiv1">
+                                                        <span style="padding: 5px;">Brave Interior User Login</span></div>
+                                                    <div class="Maintoptextstyle" style="padding-top: 13px;" id="loginapdiv2">
+                                                        <span style="padding: 5px;">Email ID</span></div>
+                                                    <div class="Maintoptextstyle" style="padding-top: 13px;" id="loginapdiv3">
+                                                        <span style="padding: 5px;">Password</span></div>
+                                                    <div id="loginapdiv4" style="padding-top: 5px;">
+                                                        <span style="padding: 5px;">
+                                                            <input name="Username" type="text" class="Textboxstyle required" id="Username" size="40" /></span>
+                                                    </div>
+                                                    <div id="loginapdiv5" style="padding-top: 5px;">
+                                                        <span style="padding: 5px;">
+                                                            <input name="Password" type="password" class="Textboxstyle required" id="Password"
+                                                                size="40" /></span>
+                                                    </div>
+                                                    <div class="Maintoptextstyle" id="loginapdiv6" style="padding-top: 8px;">
+                                                    </div>
+                                                    <div class="Maintoptextstyle" id="loginapdiv7" style="padding-top: 13px;">
+                                                        <span style="padding: 5px;">
+                                                            <input name="Login" value="Login" type="submit" /></span></div>
+                                                }
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <div style='display: none'>
+                                        <img src='/images/close-button.png' alt='' />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end 360 popup -->
+                    </div>
+                    @Html.Partial("_Basket")
+                </div>
+                <!-- body start -->
+                @RenderBody()
+                <!-- body end -->
+                <div id="page-footer" style="position: absolute; background-position: center; padding: 0px;
+                    margin: 0px; border: none; top: 668px;">
+                    <div id="divider1-bottom-tag">
+                    </div>
+                    <div id="divider2-bottom-tag">
+                    </div>
+                    <div id="main-navigation-tag" class="main-navigation-tag">
+                        <a href="/" target="_self">Home</a> | <a href="/Home/About" target="_self">About us</a>
+                        | <a href="/Home/Shipping" target="_self">Shipping &amp; Return information</a>
+                        | <a href="/Home/Contact" target="_self">Contact us</a></div>
+                    <div id="media-tag">
+                        <a href="http://www.facebook.com/pages/Brave-Interiors/203803039654807" target="_blank">
+                            <img src="/images/fb.png" width="89" height="17" border="0" /></a>&nbsp;<a href="http://www.pinterest.com/braveinteriors"
+                                target="_blank"><img src="/images/pin.png" width="81" height="18" border="0" /></a>&nbsp;<a
+                                    href="http://www.youtube.com/user/braveinteriors?feature=results_main" target="_blank"><img
+                                        src="/images/ytube.png" width="87" height="18" border="0" /></a></div>
+                    <div id="copyright-tag" class="Main-copyright-text">
+                        Copyright &copy; 2011 Brave Interiors. All Rights Reserved.</div>
+                    <div id="bottombase-tag">
+                    </div>
+                </div>
+                <!--1st drop down menu -->
+                <div id="dropmenu1_c" class="dropmenudiv_c">
+                    <a href="/Products/Garment/BraveRail">Brave Rail</a><a href="/Products/Garment/PremiumRail">Premium
+                        Rail</a> <a href="/Products/Garment/PrimiRail">Primi Rail</a><a href="/Products/Garment/StackRail">Stack
+                            Rail</a>
+                </div>
+                <!--2nd drop down menu -->
+                <div id="dropmenu2_c" class="dropmenudiv_c">
+                    <a href="/Products/Storage/Pantry">Brave Stack</a><!--<a href="/Products/Storage/CoffeTable">Coffe Table</a>-->
+                </div>
+                <!--3rd drop down menu -->
+                <div id="dropmenu3_c" class="dropmenudiv_c">
+                    <a href="/Products/FishStack/FishStack">Fish Stack</a>
+                </div>
+                <!--4rd drop down menu -->
+                <div id="dropmenu4_c" class="dropmenudiv_c">
+                    <a href="/Products/CoffeeTable/CoffeeTable">Coffee Table</a>
+                </div>
+                <!--5th drop down menu -->
+                <div id="dropmenu5_c" class="dropmenudiv_c">
+                    <a href="/Products/CorkBowl/CorkBowl">Cork Bowl</a>
+                </div>
+                <script type="text/javascript">
+                    //SYNTAX: tabdropdown.init("menu_id", [integer OR "auto"])
+                    tabdropdown.init("slidemenu")
+                </script>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

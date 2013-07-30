@@ -1,0 +1,163 @@
+﻿@using BraveInteriors.Models
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#country').change(function () {
+            $('#fCart').submit();
+        });
+
+
+        $('#how_did_you').change(function () {
+            $('#fCart').submit();
+        });
+
+        
+
+    });
+</script>
+<div id="page-body" style="position: relative; background-position: center; padding: 0px;
+    margin: 0px; border: none; top: 134px; height: 534px; width: 1000px; overflow: auto;">
+    <div style="width: 980px; margin-left: 8px; margin-top: 20px;">
+        <span class="Main-bold-blacktext">Shopping Cart</span></div>
+    <!-- Start Shopping Cart -->
+    <div class="cart-div">
+        @using (Html.BeginForm("CartUpdate", "Shopping", FormMethod.Post, new { id = "fCart" }))
+        {
+            <table width="990" cellspacing="1" cellpadding="4">
+                <tr class="Main-bold-blacktext">
+                    <td width="60" height="30" align="center" valign="middle" bgcolor="#EEEEEE">
+                        Remove
+                    </td>
+                    <td align="center" valign="middle" bgcolor="#EEEEEE">
+                        Product(s)
+                    </td>
+                    <td width="100" align="center" valign="middle" bgcolor="#EEEEEE">
+                        Price
+                    </td>
+                    <td width="100" align="center" valign="middle" bgcolor="#EEEEEE">
+                        Qty.
+                    </td>
+                    <td width="100" align="center" valign="middle" bgcolor="#EEEEEE">
+                        Total
+                    </td>
+                </tr>
+                @foreach (KeyValuePair<string, CartItem> item in Model)
+                {
+                    <tr>
+                        <td height="25" align="center" valign="middle" class="cart-box Maintoptextstyle">
+                            @Html.ActionLink("remove", "Delete", new { id = item.Value.Id })
+                        </td>
+                        <td valign="middle" class="Maintoptextstyle cart-box">
+                            @item.Value.Description
+                        </td>
+                        <td align="right" valign="middle" class="Maintoptextstyle cart-box">
+                            £@item.Value.Price
+                        </td>
+                        <td width="100" align="center" valign="middle" class="Maintoptextstyle cart-box">
+                            <input name='@string.Format("qty_{0}", item.Value.Id)' align="middle" type="text" class="Textboxstyle" id="@string.Format("qty_{0}", item.Value.Id)"
+                    value="@item.Value.Qty" size="5" maxlength="5" />
+                        </td>
+                        <td align="right" valign="middle" class="Maintoptextstyle cart-box">
+                        </td>
+                    </tr>
+                }
+                <tr>
+                    <td colspan="3" align="left" valign="middle">
+                        <table border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                                <td>
+                                    <input type="submit" class="update-cart" value="" />
+                                </td>
+                                <td>
+                                    <a href="/Products/Garment/BraveRail" target="_self">
+                                        <img src="/images/keep-shopping.png" width="107" height="29" border="0" /></a>
+                                </td>
+                            </tr>
+                           
+                        </table>
+                    </td>
+                    <td valign="middle" class="Maintoptextstyle">
+                        <strong>Sub Total</strong>
+                    </td>
+                    <td align="right" valign="middle" class="Maintoptextstyle cart-box">
+                        <strong>£@ViewBag.SubTotal</strong>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <table border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                                <td class="Maintoptextstyle" width="85">
+                                    Coupon Code
+                                </td>
+                                <td>
+                                    <input type="text" name="couponCode" id="couponCode" style="width: 65px; font-size: 11px;
+                                        height: 18px" class="cart-box" />
+                                </td>
+                                <td>
+                                    &nbsp;<input type="submit" class="update" value="" />
+                                </td>
+                                <td width="30">
+                                    &nbsp;
+                                </td>
+                                <td>
+                                    <table border="0" cellspacing="0" cellpadding="0">
+                                        <tr>
+                                            <td class="Maintoptextstyle">
+                                                How did you find us?&nbsp;
+                                            </td>
+                                            <td>
+                                                <!--<select name="how_did_you" id="how_did_you" style="font-size: 11px;"
+                                                    class="Textboxstyle">
+                                                <option value="">How Did You Hear About Us?</option>
+                                                <option value="Search Engine">Search Engine</option>
+                                                <option value="Referred by a friend">Referred by a friend</option>
+                                                <option value="Print advertising">Print advertising</option>
+                                                <option value="From another web site">From another web site</option>
+                                                <option value="Other">Other</option>
+                                                </select>-->
+                                                 @Html.DropDownList("how_did_you", (List<SelectListItem>)ViewBag.HowDidYouHear, new { @class = "Textboxstyle" })
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td>
+                        @Html.DropDownList("country", (List<SelectListItem>)ViewBag.Countries, new { @class = "Textboxstyle" })
+                    </td>
+                    <td height="25" valign="middle" class="Maintoptextstyle">
+                        <strong>Shipping</strong>
+                    </td>
+                    <td align="right" valign="middle" class="Maintoptextstyle cart-box">
+                        <strong>£@ViewBag.Shipping</strong>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3" align="center" valign="middle" bgcolor="#F2F2F2">
+                        &nbsp;
+                    </td>
+                    <td height="34" valign="middle" bgcolor="#F2F2F2" class="Maintoptextstyle">
+                        <strong>Total amount</strong>
+                    </td>
+                    <td align="right" valign="middle" bgcolor="#F2F2F2" class="Maintoptextstyle" style="border: solid 1px;
+                        border-bottom: double; border-color: #CCC;">
+                        <strong>£@ViewBag.Total</strong>
+                    </td>
+                </tr>
+                <tr>
+                    <td height="40" colspan="3" align="left" valign="middle">
+                        &nbsp;
+                    </td>
+                    <td colspan="2" align="right" valign="middle" class="Maintoptextstyle">
+                        <a href="/Shopping/Checkout" >
+                            <img src="/images/checkout.jpg" width="187" height="26" border="0" /></a>
+                    </td>
+                </tr>
+            </table>
+        }
+        <div style="float: right">
+        </div>
+    </div>
+    <!-- End Shopping Cart -->
+</div>

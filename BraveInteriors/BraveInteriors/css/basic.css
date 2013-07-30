@@ -1,0 +1,126 @@
+/*
+ * SimpleModal Basic Modal Dialog
+ * http://www.ericmmartin.com/projects/simplemodal/
+ * http://code.google.com/p/simplemodal/
+ *
+ * Copyright (c) 2010 Eric Martin - http://ericmmartin.com
+ *
+ * Licensed under the MIT license:
+ *   http://www.opensource.org/licenses/mit-license.php
+ *
+ * Revision: $Id: basic.css 257 2010-07-27 23:06:56Z emartin24 $
+ */
+
+#basic-modal-content {display:none; z-index:40000;}
+#basic-modal-content1 {display:none; z-index:40000;}
+
+/* Overlay */
+#simplemodal-overlay {background:url(/images/modalbg.png); cursor:auto; z-index:40000;}
+#simplemodal-overlay1 {background:url(/images/modalbg.png); cursor:auto; z-index:40000;}
+
+/* Container */
+#simplemodal-container {color:#bbb; background-color:#b5b1c3; border:5px solid #333; z-index:40000;}
+#simplemodal-container1 {color:#bbb; background-color:#b5b1c3; border:5px solid #333; z-index:40000;}
+
+#simplemodal-container .simplemodal-data {padding:0px; z-index:40000;}
+#simplemodal-container1 .simplemodal-data {padding:0px; z-index:40000;}
+#simplemodal-container code {background:#141414; display:block; z-index:40000;}
+#simplemodal-container1 code {background:#141414; display:block; z-index:40000;}
+#simplemodal-container a {color:#ddd; z-index:40000;}
+#simplemodal-container1 a {color:#ddd; z-index:40000;}
+#simplemodal-container a.modalCloseImg {background:url(/images/close-button.png) no-repeat; width:29px; height:29px; display:inline; z-index:3200; position:absolute; top:-15px; right:-16px; cursor:pointer;}
+#simplemodal-container1 a.modalCloseImg {background:url(/images/close-button.png) no-repeat; width:29px; height:29px; display:inline; z-index:3200; position:absolute; top:-15px; right:-16px; cursor:pointer;}
+#simplemodal-container h3 {color:#84b8d9;z-index:40000;}
+#simplemodal-container1 h3 {color:#84b8d9;z-index:40000;}
+
+
+/* gallery */
+a{
+	color: #27D;
+	text-decoration: none;
+}
+a:focus, a:hover, a:active {
+	text-decoration: underline;
+}
+p, li {
+	line-height: 1.8em;
+}
+h1, h2 {
+	font-family: "Trebuchet MS", Verdana, sans-serif;
+	margin: 0 0 10px 0;
+	letter-spacing:-1px;
+}
+h1 {
+	padding: 0;
+	font-size: 3em;
+	color: #333;
+}
+h2 {
+	padding-top: 10px;
+	font-size:2em;
+}
+pre {
+	font-size: 1.2em;
+	line-height: 1.2em;
+	overflow-x: auto;
+}
+div#page {
+	width: 805px;
+	height:450px;
+	background-color: #fff;
+	margin: 0;
+	text-align: left;
+}
+div#container {
+	padding: 5px;
+}
+div#ads {
+	clear: both;
+	padding: 12px 0 12px 66px;
+}
+div#footer {
+	clear: both;
+	color: #777;
+	margin: 0 auto;
+	padding: 20px 0 40px;
+	text-align: center;
+}
+
+#gal-divider {
+	position:absolute;
+	left:191px;
+	top:0px;
+	width:1px;
+	height:534px;
+	z-index:1;
+	background-color: #CCCCCC;
+}
+#gal-outer {
+	position:absolute;
+	left:204px;
+	top:60px;
+	width:599px;
+	height:402px;
+	border:solid;
+	border-width:1px;
+	border-color:#cccccc;
+	background-color:transparent;
+	z-index:17;
+}
+#gal-360 {
+	position:absolute;
+	left:733px;
+	top:464px;
+	width:69px;
+	height:23px;
+	z-index:18;
+}
+
+#manual {
+	position:absolute;
+	left:663px;
+	top:464px;
+	width:68px;
+	height:23px;
+	z-index:18;
+}

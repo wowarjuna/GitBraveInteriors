@@ -1,0 +1,221 @@
+﻿<script type="text/javascript" src="/scripts/jquery.galleriffic.js"></script>
+<script language="javascript" type="text/javascript">
+    $(document).ready(function () {
+        $("#fRegister").validate({
+            rules: {
+                ConfirmEmail: {
+                    equalTo: "#Email"
+                }
+            }
+        });
+
+        $("#fItem").validate({
+            rules: {
+                items1: {
+                    required: false,
+                    digits: true
+                }
+            }
+        });
+    });
+  </script>
+
+<div id="page-body" style="position: relative; background-position: center; padding: 0px;
+    margin: 0px; border: none; top: 134px;">
+    <div id="gallery-tag" style="text-align: center; font-family: Verdana, Helvetica, Arial, sans-serif;
+        color: #444; font-size: 10px;">
+        <div id="gal-divider">
+        </div>
+        <!--<div id="gal-outer">
+        </div>-->
+        <div id="gal-360" style="padding: 0px; margin: 0px; border: 0px;">
+            <!-- start 360 popup -->
+            <div style="padding: 0px; margin: 0px; border: 0px;" id='container'>
+                <div style="padding: 0px; margin: 0px; border: 0px;" id='content'>
+                    <div style="padding: 0px; margin: 0px; border: 0px;" id='basic-modal1'>
+                        <a href="#" class='basic1'>
+                            <img src="/images/360.jpg" width="69" height="23" border="0" /></a>
+                    </div>
+                    <!-- modal popup -->
+                    <div id="basic-modal-content1">
+                        <object id="FlashID" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="380" height="540">
+                            <param name="movie" value="/images/brave-rail-360.swf" />
+                            <param name="quality" value="high" />
+                            <param name="wmode" value="opaque" />
+                            <param name="swfversion" value="8.0.35.0" />
+                            <!-- This param tag prompts users with Flash Player 6.0 r65 and higher to download the latest version of Flash Player. Delete it if you don’t want users to see the prompt. -->
+                            <param name="expressinstall" value="Scripts/expressInstall.swf" />
+                            <!-- Next object tag is for non-IE browsers. So hide it from IE using IECC. -->
+                            <!--[if !IE]>-->
+                            <object type="application/x-shockwave-flash" data="/images/brave-rail-360.swf" width="380"
+                                height="540">
+                                <!--<![endif]-->
+                                <param name="quality" value="high" />
+                                <param name="wmode" value="opaque" />
+                                <param name="swfversion" value="8.0.35.0" />
+                                <param name="expressinstall" value="Scripts/expressInstall.swf" />
+                                <!-- The browser displays the following alternative content for users with Flash Player 6.0 and older. -->
+                                <div>
+                                    <h4>
+                                        Content on this page requires a newer version of Adobe Flash Player.</h4>
+                                    <p>
+                                        <a href="http://www.adobe.com/go/getflashplayer">
+                                            <img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif"
+                                                alt="Get Adobe Flash player" width="112" height="33" /></a></p>
+                                </div>
+                                <!--[if !IE]>-->
+                            </object>
+                            <!--<![endif]-->
+                        </object>
+                    </div>
+                    <!-- preload the images -->
+                    <div style='display: none'>
+                        <img src='/images/close-button.png' alt='' />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end 360 popup -->
+        <div id="page">
+            <div id="container">
+                <!-- Start Advanced Gallery Html Containers -->
+                <div id="gallery" class="content" style="margin-top: 32px;">
+                    <div id="controls" class="controls">
+                    </div>
+                    <div class="slideshow-container">
+                        <div id="loading" class="loader">
+                        </div>
+                        <div id="slideshow" class="slideshow">
+                        </div>
+                    </div>
+                </div>
+                <div id="thumbs" class="navigation" style="margin-top: 27px;">
+                    <ul class="thumbs noscript">
+                        <li><a class="thumb" name="" href="/images/brave-gal-5-5.jpg" title="Title #1">
+                            <img src="/images/brave-gal-5.jpg" alt="Title #1" />
+                        </a>
+                            <div class="caption">
+                            </div>
+                        </li>
+                        <li><a class="thumb" name="" href="/images/brave-gal-1-1.jpg" title="Title #2">
+                            <img src="/images/brave-gal-1.jpg" alt="Title #2" />
+                        </a>
+                            <div class="caption">
+                            </div>
+                        </li>
+
+                        <li><a class="thumb" name="" href="/images/brave-gal-4-4.jpg" title="Title #2">
+                            <img src="/images/brave-gal-4.jpg" alt="Title #2" />
+                        </a>
+                            <div class="caption">
+                            </div>
+                        </li>
+                        <li><a class="thumb" name="" href="/images/brave-gal-6-6.jpg" title="Title #3">
+                            <img src="/images/brave-gal-6.jpg" alt="Title #3" />
+                        </a>
+                            <div class="caption">
+                            </div>
+                        </li>
+                        
+                         <li><a class="thumb" name="" href="/images/brave-gal-7-7.jpg" title="Title #1">
+                            <img src="/images/brave-gal-7.jpg" alt="Title #1" />
+                        </a>
+                            <div class="caption">
+                            </div>
+                        </li>
+                        <li><a class="thumb" name="" href="/images/brave-gal-8-8.jpg" title="Title #3"><img src="/images/brave-gal-8.jpg" alt="Title #3" /></a>
+                          <div class="caption">
+                            </div>
+                        </li>
+                    </ul>
+</div>
+                <!-- End Advanced Gallery Html Containers -->
+                <!-- Add image link -->
+                <div style="clear: both;">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="cart-body" style="padding: 0px; margin: 0px; overflow: hidden; z-index: 10">
+        @using (Html.BeginForm("Cart", "Shopping", FormMethod.Post, new { id = "fItem" }))
+        {
+            @Html.AntiForgeryToken()
+            <input type="hidden" name="product" value="01|Brave Rail" />
+            <div id="cart-tital-header">
+                <span class="cartboldtitlsmall">Brave Rail <span class="reportback">From £120.00</span></span></div>
+            <div id="cart-pane" style="background-position: center; padding: 0px; margin: 0px;
+                overflow: hidden;">
+            </div>
+      <div id="dropdown-colm">
+                <table width="165" border="0" align="center" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td colspan="2">
+                            <select name="size" class="Dropdownboxstyle" id="size" style="width: 140px;">
+                                <option value="125|3 ft (90cm)">3 ft (90cm) £125</option>
+                                <option value="139|4 ft (120cm)">4 ft (120cm) £139</option>
+                                <option value="149|5 ft (150cm)">5 ft (150cm) £149</option>
+                                <option value="165|6 ft (180cm)">6 ft (180cm) £165</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">&nbsp;
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <select name="addon" class="Dropdownboxstyle" id="addon" style="width: 140px;">
+                                <option value="">Bag Hooks</option>
+                                <option value="5|Bag Hooks (Qty 1)">Qty 1 £5</option>
+                                <option value="8|Bag Hooks (Qty 2)">Qty 2 £8</option>
+                                <option value="11|Bag Hooks (Qty 3)">Qty 3 £11</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">&nbsp;
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                    <td width="21">
+                            <input name="param1" type="checkbox" class="Maintoptextstyle" value="60|Oak Shelve" /></td>
+                    <td width="144"><span class="Maintoptextstyle">Oak Shelve £60</span></td>
+                    </tr>
+                    
+                    <tr>
+                        <td colspan="2">&nbsp;
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                    <td width="21">
+                            <input size="2" name="items1" id="items1" type="text" class="Maintoptextstyle" /></td>
+                    <td width="144"><span class="Maintoptextstyle">Side Shelve £30 each</span></td>
+                    </tr>
+                    
+                    <tr>
+                        <td colspan="2">&nbsp;
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <input type="submit" class="add-to-cart" value=" " />
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">&nbsp;
+                            
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="Maintoptextstyle" id="cart-pane-text">
+                The original Brave Rail. Industrial chic where you need it most. Set on heavy duty,
+          non marking castors, you won't be caught off the rails.</div>
+        }
+    </div>
+</div>

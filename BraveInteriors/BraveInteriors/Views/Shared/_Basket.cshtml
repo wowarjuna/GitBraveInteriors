@@ -1,0 +1,36 @@
+﻿@helper GetTotal() {
+    var _cart = Session["cart"] as Dictionary<string, BraveInteriors.Models.CartItem>;
+    double _total = 0;
+    
+    if(_cart != null) {
+        foreach (var _item in _cart) {
+            _total += _item.Value.Total;
+        }
+    }
+    
+    if(_total == 0) {
+        @string.Format("{0}", "Empty")
+    } else {
+       @string.Format("£{0}", _total)
+    }
+}
+<div id="bagvalue-tag" class="Maintoptextstyle">
+    @if ((Dictionary<string, BraveInteriors.Models.CartItem>)Session["cart"] != null && ((Dictionary<string, BraveInteriors.Models.CartItem>)Session["cart"]).Count != 0)
+    {
+        <a href="/Shopping/Cart">(@GetTotal()) Shopping Bag</a>
+    }
+    else
+    {
+        <span>(Empty) Shopping Bag</span>
+    }
+</div>    
+<div id="shoppingbag-tag">
+    @if ((Dictionary<string, BraveInteriors.Models.CartItem>)Session["cart"] != null && ((Dictionary<string, BraveInteriors.Models.CartItem>)Session["cart"]).Count != 0)
+    {
+    <a href="/Shopping/Cart"><img src="/images/shoping-bag.png" width="18" height="18" style="border-width:0px" /></a>
+    }
+    else
+    {
+        <img src="/images/shoping-bag.png" width="18" height="18" style="border-width:0px" />
+    }
+</div>
